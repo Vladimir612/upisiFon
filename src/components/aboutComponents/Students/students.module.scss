@@ -1,22 +1,13 @@
 @import "../../../global.scss";
 
 .students {
-  min-height: 100vh;
   padding: 3rem 7rem;
   background: #fffac6;
   .cards {
     margin-top: 4rem;
-    @include box-center($justify: space-between, $align: flex-start);
-  }
-}
-
-@media screen and (max-width: 1450px) {
-  .students {
-    .cards {
-      flex-direction: column;
-      gap: 5rem;
-      margin: 5rem 0;
-    }
+    gap: 4rem;
+    @include box-center($align: flex-start);
+    flex-wrap: wrap;
   }
 }
 

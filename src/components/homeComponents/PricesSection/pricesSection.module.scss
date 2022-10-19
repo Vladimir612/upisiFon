@@ -4,9 +4,10 @@
   background: $pink-000;
   padding: 2rem 7rem;
   .cards {
-    gap: 2rem;
+    gap: 4rem;
     margin: 4rem 0;
-    @include box-center($justify: space-between);
+    @include box-center($justify: center);
+    flex-wrap: wrap;
     width: 100%;
   }
 }

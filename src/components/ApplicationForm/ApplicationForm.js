@@ -52,7 +52,7 @@ const ApplicationForm = () => {
 
     setMembers(arr)
 
-    if (numOfPeople === 1) {
+    if (numOfPeople <= 2) {
       setRadioGroupTwo(1)
       if (radioGroupOne === 1) {
         setPrice(27000)

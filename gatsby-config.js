@@ -15,7 +15,7 @@ module.exports = {
         što su email i WhatsApp.`,
     image: `/binaryLogoMini.svg`,
     author: `@binarybioskop`,
-    keywords: `fon, prijemni, matematika, upis, onlajn`,
+    keywords: `fon, prijemni, matematika, upis, onlajn, online, priprema`,
     siteUrl: `https://upisifon.rs/`,
   },
   plugins: [
