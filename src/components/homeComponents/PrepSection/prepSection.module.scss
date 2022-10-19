@@ -1,0 +1,17 @@
+@import "../../../global.scss";
+
+.prepSection {
+  padding: 2rem 7rem;
+  min-height: 70vh;
+  background: #fffac6;
+  p {
+    color: $pink-200;
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .prepSection {
+    padding: 2rem;
+  }
+}

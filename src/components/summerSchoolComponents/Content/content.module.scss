@@ -1,0 +1,24 @@
+@import "../../../global.scss";
+
+.content {
+  padding: 3rem 7rem;
+  .cards {
+    @include box-center($justify: space-between);
+    margin: 5rem 0;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .content {
+    .cards {
+      flex-direction: column;
+      gap: 4rem;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .content {
+    padding: 3rem 2rem;
+  }
+}

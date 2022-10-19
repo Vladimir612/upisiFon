@@ -1,0 +1,79 @@
+@import "../../../global.scss";
+
+.footer {
+  @include box-center($justify: space-between);
+  background: $purple-100;
+  margin-top: 4rem;
+  padding: 0 5rem;
+  min-height: 15rem;
+  z-index: 10;
+  .logo {
+    height: 18rem;
+    width: 20%;
+    img {
+      object-fit: contain !important;
+      object-position: left !important;
+    }
+  }
+  .contentCenter {
+    width: 60%;
+    z-index: 10;
+    div {
+      @include box-center;
+      p {
+        margin-left: 1rem;
+      }
+    }
+    * {
+      text-align: center;
+      color: $white-000;
+      margin: 0.15rem 0;
+    }
+  }
+  .socialMedia {
+    height: 100%;
+    width: 20%;
+    @include box-center($align: flex-end, $justify: flex-end);
+    gap: 1rem;
+    align-self: flex-end;
+    padding-bottom: 2rem;
+    svg {
+      transition: all ease-in-out 0.15s;
+    }
+    svg:hover {
+      transform: scale(1.05);
+      color: $pink-200 !important;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .footer {
+    flex-direction: column-reverse;
+    padding: 3rem 0;
+    padding-bottom: 0;
+    .logo {
+      height: 15rem;
+      width: 35%;
+      img {
+        object-position: bottom !important;
+      }
+    }
+    .socialMedia {
+      padding-bottom: 2rem;
+      width: initial;
+      align-self: initial;
+    }
+    .contentCenter {
+      width: 95%;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .footer {
+    .logo {
+      width: 50%;
+    }
+  }
+}

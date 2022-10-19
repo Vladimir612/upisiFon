@@ -1,0 +1,28 @@
+@import "../../../global.scss";
+
+.wrapper {
+  @include box-center($direction: column);
+  gap: 2rem;
+  .video {
+    position: relative;
+    iframe {
+      border-radius: 2rem;
+      overflow: hidden;
+      height: 13rem;
+      box-shadow: 2px 2px 12px 4px rgba(144, 20, 72, 0.125);
+    }
+  }
+  .title {
+    border-radius: 2rem;
+    box-shadow: 2px 2px 12px 4px rgba(144, 20, 72, 0.125);
+    @include box-center;
+    background: transparentize($color: $white-200, $amount: 0.7);
+    width: 100%;
+    padding: 1rem 0;
+    h4 {
+      text-align: center;
+      text-transform: uppercase;
+      color: $pink-200;
+    }
+  }
+}

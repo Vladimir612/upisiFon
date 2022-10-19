@@ -1,0 +1,101 @@
+@import "./global.scss";
+
+@font-face {
+  font-family: "Segoe UI Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Segoe UI Regular"), url("./fonts/SegoeUI.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Segoe UI Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Segoe UI Italic"), url("./fonts/SegoeUIItalic.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Segoe UI Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Segoe UI Bold"), url("./fonts/SegoeUIBold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Segoe UI Bold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Segoe UI Bold Italic"),
+    url("./fonts/SegoeUIBoldItalic.ttf") format("ttf");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: $main-font;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 0.8rem 1.4rem;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.17s cubic-bezier(0.56, 1, 0.45, 1) 0s;
+  &:hover {
+    transform: scale(1.075);
+  }
+  &:active {
+    transform: scale(0.925);
+  }
+}
+
+p {
+  line-height: 2.2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: $white-200;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.wave-global {
+  width: 100vw;
+}
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+  z-index: 2000;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  z-index: 2000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparentize($color: $pink-100, $amount: 0.6);
+  border-radius: 10px;
+  z-index: 2000;
+  transition: all ease-in-out 0.4s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darken($pink-100, 20);
+}
+
+ul {
+  list-style: none;
+}

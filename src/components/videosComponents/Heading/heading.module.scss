@@ -1,0 +1,30 @@
+@import "../../../global.scss";
+
+.heading {
+  .headingAndBtn {
+    @include box-center($justify: space-between);
+    button {
+      padding: initial;
+      a {
+        display: table-cell;
+        vertical-align: middle;
+        height: 3rem;
+        padding: 0.4rem 4rem;
+        color: $white-000 !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .heading {
+    .headingAndBtn {
+      flex-direction: column;
+      margin-bottom: 3rem;
+    }
+    h3,
+    h2 {
+      text-align: center;
+    }
+  }
+}

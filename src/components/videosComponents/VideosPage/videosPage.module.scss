@@ -1,0 +1,15 @@
+@import "../../../global.scss";
+
+.videosPage {
+  padding: 3rem 7rem;
+  .learningUnits {
+    margin: 3rem 0;
+    @include box-center($justify: space-between, $direction: column);
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .videosPage {
+    padding: 3rem 2rem;
+  }
+}

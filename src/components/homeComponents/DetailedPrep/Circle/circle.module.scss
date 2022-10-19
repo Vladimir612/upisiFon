@@ -1,0 +1,51 @@
+@import "../../../../global.scss";
+
+.circle {
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 50%;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  user-select: none;
+  &:hover {
+    transform: scale(1.05) translateY(-1rem);
+    border-radius: 25%;
+  }
+  &.circle1 {
+    background: $gradient-one;
+  }
+  &.circle2 {
+    background: $gradient-two;
+  }
+  &.circle3 {
+    background: $gradient-three;
+  }
+  &.circle4 {
+    background: $gradient-four;
+  }
+  &.circle5 {
+    background: $gradient-five;
+  }
+  .num {
+    font-size: 8rem;
+    color: transparentize($color: $white-000, $amount: 0.8);
+    font-weight: 700;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -55%);
+  }
+  p {
+    width: 92%;
+    z-index: 10;
+    color: $white-000;
+    font-weight: 500;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 1.4rem;
+    font-size: 1.15rem;
+  }
+}

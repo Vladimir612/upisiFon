@@ -1,0 +1,56 @@
+@import "../../../../global.scss";
+
+.priceCard {
+  padding: 2.5rem;
+  background: rgba(255, 245, 252, 0.3);
+  border-radius: 2rem;
+  min-height: 27rem;
+  width: 23rem;
+  max-width: 90%;
+  @include box-center($direction: column, $justify: space-between);
+  color: $pink-200;
+  gap: 1rem;
+  box-shadow: 2px 2px 12px 4px rgba(144, 20, 72, 0.125);
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    transform: scale(1.05) translateY(-1rem);
+    background: rgba(255, 245, 252, 0.6);
+  }
+  img {
+    height: 2.8rem;
+  }
+  p {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    margin-top: 0.6rem;
+  }
+  h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    width: 80%;
+  }
+  h5 {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+  * {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1365px) {
+  .priceCard {
+    padding: 1.5rem;
+    width: 18rem;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .priceCard {
+    width: 22rem;
+  }
+}

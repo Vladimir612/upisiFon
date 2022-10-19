@@ -1,0 +1,62 @@
+@import "../../../../global.scss";
+
+.person {
+  @include box-center($justify: flex-start);
+  gap: 3rem;
+  .left {
+    @include box-center($justify: space-between, $direction: column);
+    gap: 1rem;
+  }
+  .imgWrapper {
+    width: 15rem;
+    height: 15rem;
+    margin-top: 4rem;
+    img {
+      border-radius: 50%;
+      object-position: top !important;
+    }
+  }
+  h5 {
+    font-size: 1.3rem;
+    color: $pink-200;
+    text-align: center;
+  }
+  h6 {
+    font-size: 1.2rem;
+    color: $pink-200;
+  }
+  p {
+    color: $purple-100;
+    font-size: 1.15rem;
+    width: 70%;
+  }
+  .socialMedia {
+    @include box-center;
+    gap: 1rem;
+    svg {
+      transition: all ease-in-out 0.15s;
+    }
+    svg:hover {
+      transform: scale(1.05);
+      color: $pink-200 !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .person {
+    p {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .person {
+    flex-direction: column;
+    p {
+      width: 95%;
+      text-align: center;
+    }
+  }
+}

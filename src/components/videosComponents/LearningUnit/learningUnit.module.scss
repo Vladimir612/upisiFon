@@ -1,0 +1,31 @@
+@import "../../../global.scss";
+
+.learningUnit {
+  width: 100%;
+  min-height: 4rem;
+  border-radius: 2rem;
+  margin: 1rem 0;
+  box-shadow: 2px 2px 11px 5px rgb(144 20 72 / 13%);
+  padding: 1rem 2rem;
+  .topRow {
+    @include box-center($justify: space-between);
+    svg,
+    h3 {
+      color: $pink-200;
+    }
+  }
+  .content {
+    @include box-center($justify: flex-start);
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin: 2rem 0;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .learningUnit {
+    .content {
+      justify-content: center;
+    }
+  }
+}

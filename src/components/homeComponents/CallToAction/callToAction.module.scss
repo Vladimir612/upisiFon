@@ -1,0 +1,51 @@
+@import "../../../global.scss";
+
+.container {
+  background: $white-200;
+  padding: 3rem 7rem;
+  transform: translateY(4.5rem);
+  position: relative;
+  // &::after {
+  //   display: block;
+  //   content: "";
+  //   position: absolute;
+  //   bottom: -9rem;
+  //   left: 0;
+  //   width: 100vw;
+  //   z-index: -10;
+  //   height: 9rem;
+  //   background: #fffac6;
+  // }
+  .videos {
+    @include box-center;
+    gap: 2rem;
+    margin: 5rem 0;
+    flex-wrap: wrap;
+  }
+  .txtAndBtn {
+    @include box-center;
+    gap: 1rem;
+    height: 5rem;
+    button {
+      padding: initial;
+      a {
+        display: table-cell;
+        vertical-align: middle;
+        height: 3rem;
+        padding: 0.4rem 4rem;
+        color: $white-000 !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    padding: 3rem 2rem;
+    .txtAndBtn {
+      flex-direction: column;
+      gap: 3rem;
+      margin: 2rem 0;
+    }
+  }
+}

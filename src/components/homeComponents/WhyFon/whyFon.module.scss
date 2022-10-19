@@ -1,0 +1,87 @@
+@import "../../../global.scss";
+
+.whyFon {
+  @include box-center($justify: flex-end, $direction: row-reverse);
+  min-height: calc(100vh - 4.5rem);
+  padding: 0 7rem 4rem 7rem;
+  background: $white-200;
+  gap: 6rem;
+  h2 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin-bottom: 6rem !important;
+  }
+  .text {
+    width: 50%;
+    color: $pink-200;
+    ul {
+      margin-top: 12rem;
+      list-style-type: disc;
+      padding-left: 2rem;
+      li {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+        font-weight: 500;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+  .imgWrapper {
+    width: 26rem;
+    height: 26rem;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      object-position: center !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .whyFon {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    .fonImg {
+      width: 100%;
+      .imgWrapper {
+        margin: auto;
+      }
+    }
+    .text {
+      width: 100%;
+      ul {
+        margin-top: 0;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .whyFon {
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .whyFon {
+    .fonImg {
+      .imgWrapper {
+        width: 20rem;
+        height: 20rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .whyFon {
+    .fonImg {
+      .imgWrapper {
+        width: 17rem;
+        height: 17rem;
+      }
+    }
+  }
+}
