@@ -310,7 +310,9 @@ const ApplicationForm = () => {
                   <button
                     type="button"
                     className={styles.btnNum}
-                    onClick={() => setNumOfPeople(nP => nP - 1)}
+                    onClick={() =>
+                      numOfPeople >= 1 && setNumOfPeople(nP => nP - 1)
+                    }
                   >
                     -
                   </button>
@@ -398,7 +400,7 @@ const ApplicationForm = () => {
                 KUPI
               </button>
               <p>
-                Nakon prijave ce Vas kontaktirati neko iz BinaryBioskop tima!
+                "Nakon prijave ce Vas kontaktirati neko iz BinaryBioskop tima!"
               </p>
             </div>
           </form>

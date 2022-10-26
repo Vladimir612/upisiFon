@@ -7,13 +7,13 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `UpisiFon.rs`,
+    title: `UpišiFon.rs`,
     description: `Edukativni centar Binary Bioskop organizuje online pripreme za prijemni
         ispit iz matematke za upis na FON 2023/2024. Celokupnu pripremu je,
         putem naše e-learning platforme, moguće pohađati od kuće, a u cilju
         praćenja napretka svih polaznika, koristićemo i kanale komunikacije kao
         što su email i WhatsApp.`,
-    image: `/binaryLogoMini.svg`,
+    image: `/upisiFonLogo.png`,
     author: `@binarybioskop`,
     keywords: `fon, prijemni, matematika, upis, onlajn, online, priprema`,
     siteUrl: `https://upisifon.rs/`,

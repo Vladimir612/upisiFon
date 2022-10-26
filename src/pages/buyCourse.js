@@ -14,5 +14,5 @@ const BuyCourse = () => {
 export default BuyCourse
 
 export const Head = () => (
-  <Seo title="UpisiFon.rs | Kupovina" pathname="buyCourse" />
+  <Seo title="UpišiFon.rs | Kupovina" pathname="buyCourse" />
 )

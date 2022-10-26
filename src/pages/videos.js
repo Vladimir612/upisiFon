@@ -14,5 +14,5 @@ const Videos = () => {
 export default Videos
 
 export const Head = () => (
-  <Seo title="UpisiFon.rs | Klipovi" pathname="videos" />
+  <Seo title="UpišiFon.rs | Klipovi" pathname="videos" />
 )

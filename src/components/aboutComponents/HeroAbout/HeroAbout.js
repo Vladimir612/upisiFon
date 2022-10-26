@@ -27,7 +27,7 @@ const HeroAbout = () => {
           />
         </div>
         <div className={styles.text}>
-          <h1>UpisiFon.rs</h1>
+          <h1>UpišiFon.rs</h1>
           <p style={{ marginBottom: "2rem" }}>
             Želiš li da upišeš FON, jedan od najtraženijih fakulteta? Ako je
             odgovor DA, onda je jedino što deli tebe i početak tvog nezaboravnog

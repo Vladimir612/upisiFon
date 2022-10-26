@@ -21,4 +21,4 @@ const About = () => {
 
 export default About
 
-export const Head = () => <Seo title="UpisiFon.rs | O nama" pathname="about" />
+export const Head = () => <Seo title="UpišiFon.rs | O nama" pathname="about" />

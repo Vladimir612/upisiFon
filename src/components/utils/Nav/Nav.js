@@ -55,14 +55,15 @@ const Nav = () => {
       }
     >
       <div className={styles.logo}>
-        {/* <img
-          src="/binaryLogoMini.svg"
-          alt="Binary Bioskop Logo"
+        <img
+          src={
+            activePage === 4 || activePage === 5
+              ? "/logoNav2.png"
+              : "/logoNav1.png"
+          }
+          alt="Upisi Fon Logo 2"
           className={styles.logoImg}
-        /> */}
-        <div className={styles.text}>
-          <p>UpisiFon.rs</p>
-        </div>
+        />
       </div>
       <div
         className={`${

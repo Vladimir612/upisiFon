@@ -30,7 +30,7 @@ const PricesSection = () => {
           />
           <PriceCard
             svg="/pricesThird.svg"
-            title="grupna prijava (5+ osobe)"
+            title="grupna prijava (5+ osoba)"
             price1="22000"
             price2="3000"
           />

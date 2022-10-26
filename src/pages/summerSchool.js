@@ -16,5 +16,5 @@ const SummerSchool = () => {
 export default SummerSchool
 
 export const Head = () => (
-  <Seo title="UpisiFon.rs | SummerSchool" pathname="summerSchool" />
+  <Seo title="UpišiFon.rs | SummerSchool" pathname="summerSchool" />
 )

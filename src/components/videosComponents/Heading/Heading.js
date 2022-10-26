@@ -15,8 +15,8 @@ const Heading = () => {
         </Button>
       </div>
       <Subtitle type="pink" customStyle={{ margin: 0 }}>
-        Napomena: Dozvoljen je pristup platformi isključivo sa jednog uredjaja,
-        iz Google Chrome browser-a. Za promenu uredjaja nam se prethodno javite
+        Napomena: Dozvoljen je pristup platformi isključivo sa jednog uređaja,
+        iz Google Chrome browser-a. Za promenu uređaja nam se prethodno javite
         na broj 066001100.
       </Subtitle>
     </div>
