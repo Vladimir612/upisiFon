@@ -22,7 +22,7 @@ const Hero = () => {
       <main className={styles.hero}>
         <div className={styles.text}>
           <h2>DOBRODOŠLI!</h2>
-          <h1>UpisiFon.rs</h1>
+          <h1>UpišiFon.rs</h1>
           <p>Prijemni kod nas spremi i nećeš biti u dilemi</p>
           <Button type="yellow">
             <Link to="/buyCourse">KUPI PRIPREMU</Link>

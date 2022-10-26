@@ -139,7 +139,8 @@ const ApplicationForm = () => {
         <div className={styles.successMsg}>
           <h1>Hvala Vam! Kupovina je uspešno obavljena.</h1>
           <p>
-            U najskorije vreme će Vas kontaktirati neko iz Binary bioskop tima!
+            "U najskorije vreme će vas kontaktirati neko iz Binary bioskop
+            tima!"
           </p>
           <button>
             <Link to="/">POČETNA</Link>
@@ -294,7 +295,7 @@ const ApplicationForm = () => {
                   type="text"
                   value={numOfPeople}
                   onChange={e =>
-                    e.target.value
+                    e.target.value && e.target.value !== "-"
                       ? setNumOfPeople(parseInt(e.target.value))
                       : setNumOfPeople(e.target.value)
                   }
@@ -400,7 +401,7 @@ const ApplicationForm = () => {
                 KUPI
               </button>
               <p>
-                "Nakon prijave ce Vas kontaktirati neko iz BinaryBioskop tima!"
+                "Nakon prijave ce vas kontaktirati neko iz BinaryBioskop tima!"
               </p>
             </div>
           </form>
