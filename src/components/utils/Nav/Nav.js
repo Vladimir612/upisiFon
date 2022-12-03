@@ -64,7 +64,7 @@ const Nav = () => {
               ? "/logoNav2.png"
               : "/logoNav1.png"
           }
-          alt="Upisi Fon Logo 2"
+          alt="Upiši Fon"
           className={styles.logoImg}
         />
       </div>
