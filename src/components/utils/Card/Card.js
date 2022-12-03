@@ -1,14 +1,17 @@
 import React from "react"
 import * as styles from "./card.module.scss"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-const Card = ({ img, title }) => {
+const Card = ({ img, title, alt }) => {
   return (
     <div className={styles.card}>
       <h4>{title}</h4>
-      <div className={styles.imgWrapper}>
-        <Img fluid={img} style={{ height: "100%" }} />
-      </div>
+      <GatsbyImage
+        image={img}
+        className={styles.imgWrapper}
+        imgStyle={{ objectFit: "contain" }}
+        alt={alt}
+      />
     </div>
   )
 }

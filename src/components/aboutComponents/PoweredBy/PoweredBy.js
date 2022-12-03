@@ -1,16 +1,14 @@
 import React from "react"
 import * as styles from "./poweredBy.module.scss"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const PoweredBy = () => {
   const data = useStaticQuery(graphql`
     query getHeroPoweredImage {
       file(relativePath: { eq: "aboutPage/binaryPowered.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
     }
@@ -44,12 +42,13 @@ const PoweredBy = () => {
           u vreme koje njima najviše odgovara.
         </p>
       </div>
-      <div className={styles.imgWrapper}>
-        <Img
-          fluid={data.file.childImageSharp.fluid}
-          style={{ height: "100%" }}
-        />
-      </div>
+      <GatsbyImage
+        image={data.file.childImageSharp.gatsbyImageData}
+        className={styles.imgWrapper}
+        imgStyle={{ objectFit: "contain", objectPosition: "right" }}
+        loading="eager"
+        alt="Binary bioskop logo"
+      />
     </section>
   )
 }

@@ -2,6 +2,7 @@
 
 .hero {
   @include box-center;
+  gap: 2rem;
   min-height: calc(100vh - 4.5rem);
   padding: 0 7rem;
   background: $pink-200;
@@ -40,39 +41,35 @@
     }
   }
   .imgWrapper {
-    width: 50%;
-    height: 30rem;
-    img {
-      object-fit: contain !important;
-      object-position: right !important;
+    width: 50% !important;
+    height: 30rem !important;
+    > div {
+      background-color: transparent !important;
     }
+  }
+  .btnWrapper {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 1050px) {
   .hero {
     flex-direction: column-reverse;
-    justify-content: center;
-    .text,
     .imgWrapper {
-      width: 100%;
-      height: 25rem;
+      height: 25rem !important;
+      width: 100% !important;
       img {
         object-position: center !important;
       }
     }
     .text {
+      width: 100%;
       * {
         text-align: center;
       }
       h2,
       button {
         margin: 2rem 0;
-      }
-      button {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
       }
       p {
         margin: 2rem 0;
@@ -86,8 +83,7 @@
   .hero {
     padding: 1rem 2rem;
     .imgWrapper {
-      height: 14rem;
-      padding: 2rem 0;
+      height: 14rem !important;
     }
     .text {
       h2 {

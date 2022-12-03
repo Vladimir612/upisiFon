@@ -8,12 +8,15 @@
     gap: 1rem;
   }
   .imgWrapper {
-    width: 15rem;
-    height: 15rem;
+    width: 15rem !important;
+    height: 15rem !important;
     margin-top: 4rem;
     img {
       border-radius: 50%;
       object-position: top !important;
+    }
+    > div {
+      background-color: transparent !important;
     }
   }
   h5 {

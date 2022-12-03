@@ -7,12 +7,11 @@
   padding: 0 5rem;
   min-height: 15rem;
   z-index: 10;
-  .logo {
-    height: 18rem;
-    width: 20%;
-    img {
-      object-fit: contain !important;
-      object-position: left !important;
+  .imgWrapper {
+    width: 20% !important;
+    height: 18rem !important;
+    > div {
+      background-color: transparent !important;
     }
   }
   .contentCenter {
@@ -52,9 +51,9 @@
     flex-direction: column-reverse;
     padding: 3rem 0;
     padding-bottom: 0;
-    .logo {
-      height: 15rem;
-      width: 35%;
+    .imgWrapper {
+      height: 15rem !important;
+      width: 35% !important;
       img {
         object-position: bottom !important;
       }
@@ -72,8 +71,8 @@
 
 @media screen and (max-width: 950px) {
   .footer {
-    .logo {
-      width: 50%;
+    .imgWrapper {
+      width: 50% !important;
     }
   }
 }

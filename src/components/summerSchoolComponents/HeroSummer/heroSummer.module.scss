@@ -37,11 +37,10 @@
     }
   }
   .imgWrapper {
-    width: 40%;
-    height: 28rem;
-    img {
-      object-fit: contain !important;
-      object-position: right !important;
+    width: 50% !important;
+    height: 30rem !important;
+    > div {
+      background-color: transparent !important;
     }
   }
 }
@@ -49,17 +48,16 @@
 @media screen and (max-width: 1050px) {
   .hero {
     flex-direction: column-reverse;
-    justify-content: space-evenly;
-    gap: 0;
     padding: 0 7rem 3rem 7rem;
-    .text,
     .imgWrapper {
+      height: 25rem !important;
       width: 100%;
       img {
         object-position: center !important;
       }
     }
     .text {
+      width: 100%;
       @include box-center($direction: column);
       * {
         text-align: center;
@@ -79,9 +77,7 @@
   .hero {
     padding: 1rem 2rem;
     .imgWrapper {
-      height: 14rem;
-
-      padding: 2rem 0;
+      height: 14rem !important;
     }
     .text {
       h2 {

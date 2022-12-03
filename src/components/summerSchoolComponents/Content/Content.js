@@ -11,27 +11,21 @@ const Content = () => {
         relativePath: { eq: "summerSchool/firstCard.png" }
       ) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
       secondSummerCard: file(
         relativePath: { eq: "summerSchool/secondCard.png" }
       ) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
       thirdSummerCard: file(
         relativePath: { eq: "summerSchool/thirdCard.png" }
       ) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
     }
@@ -43,15 +37,18 @@ const Content = () => {
       <div className={styles.cards}>
         <Card
           title="Pripreme iz najtežih predmeta prve godine"
-          img={data.firstSummerCard.childImageSharp.fluid}
+          img={data.firstSummerCard.childImageSharp.gatsbyImageData}
+          alt="Najteži predmeti fon"
         />
         <Card
           title="Savetovanje i usmeravanje studenata ka optimalnom načinu rada i potencijalnim putevima karijere koji ih čekaju."
-          img={data.secondSummerCard.childImageSharp.fluid}
+          img={data.secondSummerCard.childImageSharp.gatsbyImageData}
+          alt="Savetovanje i usmeravanje"
         />
         <Card
           title="Povezivanje brucoša sa studentima starijih godina radi razmene iskustva"
-          img={data.thirdSummerCard.childImageSharp.fluid}
+          img={data.thirdSummerCard.childImageSharp.gatsbyImageData}
+          alt="Povezivanje sa starijim studentima"
         />
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from "react"
 import * as styles from "./heroAbout.module.scss"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import Button from "../../utils/Button/Button"
 
 const HeroAbout = () => {
@@ -9,9 +9,7 @@ const HeroAbout = () => {
     query getHeroAboutImage {
       file(relativePath: { eq: "aboutPage/heroImage.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
     }
@@ -20,12 +18,13 @@ const HeroAbout = () => {
   return (
     <>
       <main className={styles.hero}>
-        <div className={styles.imgWrapper}>
-          <Img
-            fluid={data.file.childImageSharp.fluid}
-            style={{ height: "100%" }}
-          />
-        </div>
+        <GatsbyImage
+          image={data.file.childImageSharp.gatsbyImageData}
+          className={styles.imgWrapper}
+          imgStyle={{ objectFit: "contain", objectPosition: "left" }}
+          loading="eager"
+          alt="Matematika Ilustracija"
+        />
         <div className={styles.text}>
           <h1>UpišiFon.rs</h1>
           <p style={{ marginBottom: "2rem" }}>

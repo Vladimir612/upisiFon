@@ -2,16 +2,14 @@ import React from "react"
 import * as styles from "./whyFon.module.scss"
 import Title from "./../../utils/Title/Title"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const WhyFon = () => {
   const data = useStaticQuery(graphql`
     query getFonImage {
       file(relativePath: { eq: "homePage/fon.jpg" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
     }
@@ -33,12 +31,12 @@ const WhyFon = () => {
       </div>
       <div className={styles.fonImg}>
         <Title type="pink">Zašto FON?</Title>
-        <div className={styles.imgWrapper}>
-          <Img
-            fluid={data.file.childImageSharp.fluid}
-            style={{ height: "100%" }}
-          />
-        </div>
+        <GatsbyImage
+          image={data.file.childImageSharp.gatsbyImageData}
+          className={styles.imgWrapper}
+          imgStyle={{ objectPosition: "center" }}
+          alt="Fon Zgrada"
+        />
       </div>
     </section>
   )

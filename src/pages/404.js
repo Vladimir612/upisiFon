@@ -1,7 +1,8 @@
 import React from "react"
+import NotFound from "./../components/NotFound/NotFound"
 
 const Error = () => {
-  return <div>NOT FOUND</div>
+  return <NotFound />
 }
 
 export default Error

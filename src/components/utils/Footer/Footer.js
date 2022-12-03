@@ -2,7 +2,7 @@ import React from "react"
 import * as styles from "./footer.module.scss"
 import { useStaticQuery } from "gatsby"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 // import { FaLinkedinIn, FaTiktok } from "react-icons/fa"
 
@@ -17,9 +17,7 @@ const Footer = () => {
     query getLogoImage {
       file(relativePath: { eq: "binaryLogo.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
     }
@@ -34,12 +32,12 @@ const Footer = () => {
         style={{ zIndex: 5, transform: "translateY(4.5rem)" }}
       />
       <footer className={styles.footer} id="contact">
-        <div className={styles.logo}>
-          <Img
-            fluid={data.file.childImageSharp.fluid}
-            style={{ height: "100%" }}
-          />
-        </div>
+        <GatsbyImage
+          image={data.file.childImageSharp.gatsbyImageData}
+          className={styles.imgWrapper}
+          imgStyle={{ objectFit: "contain", objectPosition: "left bottom" }}
+          alt="Binary bioskop logo"
+        />
         <div className={styles.contentCenter}>
           <p>U slučaju problema molimo te kontaktiraj nas!</p>
           <div>

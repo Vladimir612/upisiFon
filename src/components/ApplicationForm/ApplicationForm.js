@@ -124,7 +124,7 @@ const ApplicationForm = () => {
 
       axios
         .post(
-          "https://upisifon-mailsender.herokuapp.com/api/application",
+          "https://upisifon-mailsender.vercel.app/api/application",
           postBody
         )
         .catch(e => {

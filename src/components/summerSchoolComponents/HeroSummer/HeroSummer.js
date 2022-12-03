@@ -1,7 +1,7 @@
 import React from "react"
 import * as styles from "./heroSummer.module.scss"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import Button from "../../utils/Button/Button"
 
 const HeroSummer = () => {
@@ -9,9 +9,7 @@ const HeroSummer = () => {
     query getHeroSummerImage {
       file(relativePath: { eq: "summerSchool/heroImage.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
     }
@@ -38,12 +36,13 @@ const HeroSummer = () => {
             <Link to="/buyCourse">KUPI PRIPREMU</Link>
           </Button>
         </div>
-        <div className={styles.imgWrapper}>
-          <Img
-            fluid={data.file.childImageSharp.fluid}
-            style={{ height: "100%" }}
-          />
-        </div>
+        <GatsbyImage
+          image={data.file.childImageSharp.gatsbyImageData}
+          className={styles.imgWrapper}
+          imgStyle={{ objectFit: "contain", objectPosition: "right" }}
+          loading="eager"
+          alt="Summer school Ilustracija"
+        />
       </main>
       <img src="/waveSummer.svg" alt="Waves" className="wave-global" />
     </>

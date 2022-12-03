@@ -28,12 +28,13 @@
     }
   }
   .imgWrapper {
-    width: 26rem;
-    height: 26rem;
-    border-radius: 50%;
-    overflow: hidden;
+    width: 26rem !important;
+    height: 26rem !important;
     img {
-      object-position: center !important;
+      border-radius: 50%;
+    }
+    > div {
+      background-color: transparent !important;
     }
   }
 }
@@ -68,8 +69,16 @@
   .whyFon {
     .fonImg {
       .imgWrapper {
-        width: 20rem;
-        height: 20rem;
+        width: 20rem !important;
+        height: 20rem !important;
+      }
+    }
+    .text {
+      ul {
+        li {
+          font-size: 1.3rem;
+          line-height: 2.2rem;
+        }
       }
     }
   }
@@ -79,8 +88,8 @@
   .whyFon {
     .fonImg {
       .imgWrapper {
-        width: 17rem;
-        height: 17rem;
+        width: 17rem !important;
+        height: 17rem !important;
       }
     }
   }

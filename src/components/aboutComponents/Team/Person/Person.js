@@ -1,6 +1,6 @@
 import React from "react"
 import * as styles from "./person.module.scss"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import { FaLinkedinIn } from "react-icons/fa"
 import { IoIosMail } from "react-icons/io"
@@ -9,9 +9,7 @@ const Person = ({ img, name, role, about, linkedIn, gmail }) => {
   return (
     <div className={styles.person}>
       <div className={styles.left}>
-        <div className={styles.imgWrapper}>
-          <Img fluid={img} style={{ height: "100%" }} />
-        </div>
+        <GatsbyImage image={img} className={styles.imgWrapper} alt={name} />
         <h5>{name}</h5>
         <h6>{role}</h6>
         <div className={styles.socialMedia}>

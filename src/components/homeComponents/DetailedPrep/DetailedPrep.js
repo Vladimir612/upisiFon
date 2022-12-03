@@ -11,23 +11,17 @@ const DetailedPrep = () => {
     query getCardImages {
       firstCard: file(relativePath: { eq: "homePage/firstCard.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
       secondCard: file(relativePath: { eq: "homePage/secondCard.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
       thirdCard: file(relativePath: { eq: "homePage/thirdCard.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
     }
@@ -85,15 +79,18 @@ const DetailedPrep = () => {
       <div className={styles.cards}>
         <Card
           title="Tri simulacije polaganja prijemnog ispita"
-          img={data.firstCard.childImageSharp.fluid}
+          img={data.firstCard.childImageSharp.gatsbyImageData}
+          alt="Polaganje prijemnog"
         />
         <Card
           title="Evaluacija nakon polaganja probnih prijemnih ispita"
-          img={data.secondCard.childImageSharp.fluid}
+          img={data.secondCard.childImageSharp.gatsbyImageData}
+          alt="Evaluacija prijemnog"
         />
         <Card
           title="Video materijali sa detaljnim objašnjenjem rešavanja zadataka sa probnih prijemnih ispita"
-          img={data.thirdCard.childImageSharp.fluid}
+          img={data.thirdCard.childImageSharp.gatsbyImageData}
+          alt="Video materijali"
         />
       </div>
     </div>

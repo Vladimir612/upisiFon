@@ -17,7 +17,7 @@ const Nav = () => {
     switch (location.pathname) {
       case "/":
         switch (location.hash) {
-          case "#prices":
+          case "#cenovnik":
             setActivePage(1)
             break
           case "#contact":
@@ -28,12 +28,15 @@ const Nav = () => {
         }
         break
       case "/about":
+      case "/about/":
         setActivePage(3)
         break
       case "/videos":
+      case "/videos/":
         setActivePage(4)
         break
       case "/summerSchool":
+      case "/summerSchool/":
         setActivePage(5)
         break
       default:
@@ -75,7 +78,6 @@ const Nav = () => {
         <div className={styles.links}>
           <button
             onClick={() => {
-              setActivePage(0)
               setMenuOpen(false)
             }}
           >
@@ -98,7 +100,6 @@ const Nav = () => {
           </button>
           <button
             onClick={() => {
-              setActivePage(3)
               setMenuOpen(false)
             }}
           >
@@ -111,7 +112,6 @@ const Nav = () => {
           </button>
           <button
             onClick={() => {
-              setActivePage(4)
               setMenuOpen(false)
             }}
           >
@@ -124,7 +124,6 @@ const Nav = () => {
           </button>
           <button
             onClick={() => {
-              setActivePage(5)
               setMenuOpen(false)
             }}
           >
@@ -151,7 +150,6 @@ const Nav = () => {
         </div>
         <button
           onClick={() => {
-            setActivePage(6)
             setMenuOpen(false)
           }}
           className={styles.contactBtn}
