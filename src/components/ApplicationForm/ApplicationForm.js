@@ -57,21 +57,21 @@ const ApplicationForm = () => {
       if (radioGroupOne === 1) {
         setPrice(27000)
       } else {
-        setPrice(4000)
+        setPrice(5000)
       }
     } else if (numOfPeople > 2 && numOfPeople < 5) {
       setRadioGroupTwo(2)
       if (radioGroupOne === 1) {
         setPrice(24000)
       } else {
-        setPrice(3500)
+        setPrice(4500)
       }
     } else if (numOfPeople >= 5) {
       setRadioGroupTwo(3)
       if (radioGroupOne === 1) {
         setPrice(22000)
       } else {
-        setPrice(3000)
+        setPrice(4000)
       }
     }
   }, [numOfPeople, radioGroupOne])

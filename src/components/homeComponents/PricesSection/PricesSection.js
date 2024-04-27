@@ -20,19 +20,19 @@ const PricesSection = () => {
             svg="/pricesFirst.svg"
             title="INDIVIDUALNA PRIJAVA"
             price1="27000"
-            price2="4000"
+            price2="5000"
           />
           <PriceCard
             svg="/pricesSecond.svg"
             title="grupna prijava (3+ osobe)"
             price1="24000"
-            price2="3500"
+            price2="4500"
           />
           <PriceCard
             svg="/pricesThird.svg"
             title="grupna prijava (5+ osoba)"
             price1="22000"
-            price2="3000"
+            price2="4000"
           />
         </div>
       </section>
