@@ -20,7 +20,7 @@ const ApplicationForm = () => {
   // const [activeInputTwo, setActiveInputTwo] = useState(false)
 
   const [radioGroupOne, setRadioGroupOne] = useState(1)
-  const [radioGroupTwo, setRadioGroupTwo] = useState(2)
+  const [radioGroupTwo, setRadioGroupTwo] = useState(3)
 
   const [promoCode, setPromoCode] = useState("")
 
@@ -56,6 +56,8 @@ const ApplicationForm = () => {
       setRadioGroupTwo(1)
       if (radioGroupOne === 1) {
         setPrice(27000)
+      } else if (radioGroupOne === 3) {
+        setPrice(9900)
       } else {
         setPrice(5000)
       }
@@ -75,6 +77,22 @@ const ApplicationForm = () => {
       }
     }
   }, [numOfPeople, radioGroupOne])
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search)
+    const summerSchool = searchParams.get("summerSchool")
+
+    if (summerSchool !== null) {
+      setRadioGroupOne(3)
+      setNumOfPeople(1)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (radioGroupOne === 3) {
+      setNumOfPeople(1)
+    }
+  }, [radioGroupOne])
 
   // const universities = ["beogradski univerzitet", "niški univerzitet"]
 
@@ -106,13 +124,17 @@ const ApplicationForm = () => {
       let postBody = {
         application: {
           tipKupovine1:
-            radioGroupOne === 1 ? "Celu pripremu" : "Paket probnih prijemnih",
+            radioGroupOne === 1
+              ? "Celu pripremu"
+              : radioGroupOne === 2
+              ? "Paket probnih prijemnih"
+              : "Summer school",
           tipKupovine2:
             radioGroupTwo === 1
               ? "Individualna prijava"
               : radioGroupTwo === 2
               ? "Grupna prijava (3+ osobe)"
-              : "Grupna prijava (5+ osobe)",
+              : "Grupna prijava (5+ osoba)",
           brojClanova: numOfPeople,
           ukupnaCena: price,
           promoKod: promoCode,
@@ -237,89 +259,105 @@ const ApplicationForm = () => {
                 </button>
                 <p>Paket probnih prijemnih</p>
               </div>
-            </div>
-
-            <div className={styles.radioGroup}>
-              <p className={styles.radioHeading}>Način prijave: </p>
               <div className={styles.radioBtn}>
                 <button
                   type="button"
                   className={`${styles.circle} ${
-                    radioGroupTwo === 1 && styles.activeTrue
+                    radioGroupOne === 3 && styles.activeTrue
                   }`}
-                  onClick={() => {
-                    setRadioGroupTwo(1)
-                    setNumOfPeople(1)
-                  }}
+                  onClick={() => setRadioGroupOne(3)}
                 >
                   a
                 </button>
-                <p>Individualna prijava</p>
-              </div>
-              <div className={styles.radioBtn}>
-                <button
-                  type="button"
-                  className={`${styles.circle} ${
-                    radioGroupTwo === 2 && styles.activeTrue
-                  }`}
-                  onClick={() => {
-                    setRadioGroupTwo(2)
-                    setNumOfPeople(3)
-                  }}
-                >
-                  a
-                </button>
-                <p>Grupna prijava (3+ osobe)</p>
-              </div>
-              <div className={styles.radioBtn}>
-                <button
-                  type="button"
-                  className={`${styles.circle} ${
-                    radioGroupTwo === 3 && styles.activeTrue
-                  }`}
-                  onClick={() => {
-                    setRadioGroupTwo(3)
-                    setNumOfPeople(5)
-                  }}
-                >
-                  a
-                </button>
-                <p>Grupna prijava (5+ osobe)</p>
+                <p>Summer school</p>
               </div>
             </div>
 
-            <div className={styles.numPeople}>
-              <h4>Broj članova: </h4>
-              <div className={styles.inputField}>
-                <input
-                  type="text"
-                  value={numOfPeople}
-                  onChange={e =>
-                    e.target.value && e.target.value !== "-"
-                      ? setNumOfPeople(parseInt(e.target.value))
-                      : setNumOfPeople(e.target.value)
-                  }
-                />
-                <div className={styles.btnGroup}>
+            {radioGroupOne !== 3 && (
+              <div className={styles.radioGroup}>
+                <p className={styles.radioHeading}>Način prijave: </p>
+                <div className={styles.radioBtn}>
                   <button
                     type="button"
-                    className={styles.btnNum}
-                    onClick={() => setNumOfPeople(nP => nP + 1)}
+                    className={`${styles.circle} ${
+                      radioGroupTwo === 1 && styles.activeTrue
+                    }`}
+                    onClick={() => {
+                      setRadioGroupTwo(1)
+                      setNumOfPeople(1)
+                    }}
                   >
-                    +
+                    a
                   </button>
+                  <p>Individualna prijava</p>
+                </div>
+                <div className={styles.radioBtn}>
                   <button
                     type="button"
-                    className={styles.btnNum}
-                    onClick={() =>
-                      numOfPeople >= 1 && setNumOfPeople(nP => nP - 1)
-                    }
+                    className={`${styles.circle} ${
+                      radioGroupTwo === 2 && styles.activeTrue
+                    }`}
+                    onClick={() => {
+                      setRadioGroupTwo(2)
+                      setNumOfPeople(3)
+                    }}
                   >
-                    -
+                    a
                   </button>
+                  <p>Grupna prijava (3+ osobe)</p>
+                </div>
+                <div className={styles.radioBtn}>
+                  <button
+                    type="button"
+                    className={`${styles.circle} ${
+                      radioGroupTwo === 3 && styles.activeTrue
+                    }`}
+                    onClick={() => {
+                      setRadioGroupTwo(3)
+                      setNumOfPeople(5)
+                    }}
+                  >
+                    a
+                  </button>
+                  <p>Grupna prijava (5+ osoba)</p>
                 </div>
               </div>
-            </div>
+            )}
+
+            {radioGroupOne !== 3 && (
+              <div className={styles.numPeople}>
+                <h4>Broj članova: </h4>
+                <div className={styles.inputField}>
+                  <input
+                    type="text"
+                    value={numOfPeople}
+                    onChange={e =>
+                      e.target.value && e.target.value !== "-"
+                        ? setNumOfPeople(parseInt(e.target.value))
+                        : setNumOfPeople(e.target.value)
+                    }
+                  />
+                  <div className={styles.btnGroup}>
+                    <button
+                      type="button"
+                      className={styles.btnNum}
+                      onClick={() => setNumOfPeople(nP => nP + 1)}
+                    >
+                      +
+                    </button>
+                    <button
+                      type="button"
+                      className={styles.btnNum}
+                      onClick={() =>
+                        numOfPeople >= 1 && setNumOfPeople(nP => nP - 1)
+                      }
+                    >
+                      -
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
 
             <div className={styles.members}>
               {numOfPeople === "1" || numOfPeople === 1

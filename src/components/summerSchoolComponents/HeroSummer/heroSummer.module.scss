@@ -36,6 +36,20 @@
       }
     }
   }
+  .row{
+    @include box-center($justify: space-between);
+    span{
+      font-weight: 600;
+      &:first-child{
+        color: #ff5d98;
+        text-decoration-line: line-through;
+        margin-right: 1rem;
+      }
+      &:nth-child(2) {
+        color: #ff9f00;
+      }
+    }
+  }
   .imgWrapper {
     width: 50% !important;
     height: 30rem !important;
@@ -49,6 +63,10 @@
   .hero {
     flex-direction: column-reverse;
     padding: 0 7rem 3rem 7rem;
+    .row{
+      flex-direction: column;
+      margin-top: 1rem;
+    }
     .imgWrapper {
       height: 25rem !important;
       width: 100%;

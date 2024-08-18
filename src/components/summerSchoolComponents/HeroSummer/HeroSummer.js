@@ -32,9 +32,14 @@ const HeroSummer = () => {
             studija i pomogne im da steknu neophodno predznanje kako bi studije
             na FON-u predstavljale logičan nastavak procesa njihove edukacije.
           </p>
-          <Button type="pink">
-            <Link to="/buyCourse">KUPI PRIPREMU</Link>
-          </Button>
+          <div className={styles.row}>
+            <p>
+              Cena paketa: <span>11.990 dinara</span> <span>9.990 dinara</span>
+            </p>
+            <Button type="pink">
+              <Link to="/buyCourse?summerSchool">KUPI PRIPREMU</Link>
+            </Button>
+          </div>
         </div>
         <GatsbyImage
           image={data.file.childImageSharp.gatsbyImageData}
