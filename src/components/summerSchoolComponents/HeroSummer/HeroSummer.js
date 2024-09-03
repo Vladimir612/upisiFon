@@ -34,7 +34,7 @@ const HeroSummer = () => {
           </p>
           <div className={styles.row}>
             <p>
-              Cena paketa: <span>11.990 dinara</span> <span>9.990 dinara</span>
+              Cena paketa: <span>7.000 dinara</span> <span>4.990 dinara</span>
             </p>
             <Button type="pink">
               <Link to="/buyCourse?summerSchool">KUPI PRIPREMU</Link>
